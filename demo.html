@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signature Optique — Maquettes détaillées</title>
+<meta name="description" content="Chaque page, chaque écran, chaque interaction. En grand format.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F5F0E8;
+  --cream-deep: #EDE6DA;
+  --ink: #1C1C1C;
+  --ink-soft: #3A3A3A;
+  --ink-muted: #6B6B6B;
+  --copper: #B87333;
+  --copper-soft: #D4A574;
+  --sage: #8A9A5B;
+  --sand: #E8DCC8;
+  --line: rgba(28, 28, 28, 0.12);
+  --line-strong: rgba(28, 28, 28, 0.25);
+  --wa: #25D366;
+  --wa-dark: #128C7E;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-quote: 'Cormorant Garamond', Georgia, serif;
+  --gallery-bg: #2A2724;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+img { display: block; max-width: 100%; }
+body { font-family: var(--font-body); font-weight: 300; color: var(--ink); background: var(--gallery-bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+a { color: inherit; text-decoration: none; }
+
+/* HEADER */
+.gallery-header { padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(245,240,232,0.08); position: sticky; top: 0; z-index: 100; background: rgba(42,39,36,0.95); backdrop-filter: blur(12px); }
+.gallery-header__logo { font-family: var(--font-display); font-size: 1.2rem; color: var(--cream); letter-spacing: 0.02em; font-style: italic; }
+.gallery-header__meta { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(245,240,232,0.5); }
+.gallery-header__back { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,240,232,0.6); transition: color 0.2s ease; }
+.gallery-header__back:hover { color: var(--copper-soft); }
+
+/* INTRO */
+.gallery-intro { padding: 6rem 2rem 3rem; max-width: 1100px; margin: 0 auto; color: var(--cream); }
+.gallery-intro__num { font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--copper); margin-bottom: 1.5rem; }
+.gallery-intro h1 { font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4.5rem); line-height: 1.05; margin-bottom: 2rem; max-width: 18ch; font-weight: 400; }
+.gallery-intro p { font-family: var(--font-quote); font-style: italic; font-size: clamp(1.1rem, 1.8vw, 1.4rem); color: rgba(245,240,232,0.7); max-width: 50ch; }
+
+/* LEGEND */
+.gallery-legend { max-width: 1100px; margin: 0 auto; padding: 2rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; border-top: 1px solid rgba(245,240,232,0.08); border-bottom: 1px solid rgba(245,240,232,0.08); }
+.gallery-legend a { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,240,232,0.5); padding: 0.4rem 0; transition: color 0.2s ease; }
+.gallery-legend a:hover { color: var(--copper-soft); }
+.gallery-legend a .num { color: var(--copper); margin-right: 0.4rem; }
+
+/* FLOW */
+.flow { padding: 4rem 2rem; border-bottom: 1px solid rgba(245,240,232,0.08); }
+.flow:last-of-type { border-bottom: none; }
+.flow__head { max-width: 1100px; margin: 0 auto 3rem; color: var(--cream); }
+.flow__num { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.75rem; }
+.flow__head h2 { font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 400; margin-bottom: 0.75rem; }
+.flow__head p { font-family: var(--font-quote); font-style: italic; font-size: 1.1rem; color: rgba(245,240,232,0.6); max-width: 55ch; }
+
+/* SCREENS */
+.screens { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem 2.5rem; align-items: start; }
+.screen { display: flex; flex-direction: column; gap: 1rem; }
+.screen__frame { position: relative; cursor: pointer; transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1); }
+.screen__frame:hover { transform: translateY(-4px); }
+.screen__frame:hover .screen__zoom { opacity: 1; }
+.screen__zoom { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(28,28,28,0.85); color: var(--cream); padding: 0.7rem 1.4rem; border-radius: 2px; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0; transition: opacity 0.3s ease; pointer-events: none; z-index: 10; white-space: nowrap; }
+.screen__caption { color: var(--cream); }
+.screen__caption-top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: 0.4rem; }
+.screen__id { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); font-weight: 500; }
+.screen__title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 400; line-height: 1.3; }
+.screen__desc { font-family: var(--font-quote); font-style: italic; font-size: 0.9rem; color: rgba(245,240,232,0.55); line-height: 1.5; }
+
+/* BROWSER FRAME */
+.browser { background: var(--cream); border-radius: 8px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,0,0,0.1); aspect-ratio: 16 / 10; display: flex; flex-direction: column; position: relative; }
+.browser__bar { height: 28px; background: #E5DFD3; display: flex; align-items: center; padding: 0 0.75rem; gap: 0.4rem; flex-shrink: 0; border-bottom: 1px solid rgba(28,28,28,0.08); }
+.browser__dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(28,28,28,0.15); }
+.browser__dot--red { background: #E8968A; }
+.browser__dot--yellow { background: #E5C77A; }
+.browser__dot--green { background: #A5C58B; }
+.browser__url { flex: 1; margin-left: 0.75rem; background: rgba(255,255,255,0.5); border-radius: 4px; height: 16px; padding: 0 0.5rem; font-size: 0.55rem; color: var(--ink-muted); display: flex; align-items: center; letter-spacing: 0.02em; }
+.browser__content { flex: 1; overflow: hidden; position: relative; background: var(--cream); }
+
+/* PHONE FRAME */
+.phone { background: var(--ink); border-radius: 32px; padding: 10px; box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05); aspect-ratio: 9 / 19; max-width: 300px; margin: 0 auto; position: relative; display: flex; flex-direction: column; }
+.phone__notch { position: absolute; top: 14px; left: 50%; transform: translateX(-50%); width: 80px; height: 20px; background: var(--ink); border-radius: 10px; z-index: 10; }
+.phone__screen { flex: 1; background: var(--cream); border-radius: 24px; overflow: hidden; position: relative; }
+
+/* MOCK NAV */
+.mock-nav { height: 48px; padding: 0 1.5rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(28,28,28,0.08); background: rgba(245,240,232,0.95); font-size: 0.6rem; flex-shrink: 0; }
+.mock-nav__logo { font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.01em; color: var(--ink); font-style: italic; }
+.mock-nav__links { display: flex; gap: 1rem; font-size: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); }
+.mock-nav__cart { font-size: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.6rem; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--ink); display: flex; align-items: center; gap: 0.3rem; }
+.mock-nav__cart-count { background: var(--copper); color: var(--cream); min-width: 14px; height: 14px; border-radius: 7px; font-size: 0.45rem; display: flex; align-items: center; justify-content: center; font-weight: 600; padding: 0 3px; }
+
+/* SCREEN 01 HOME DESKTOP */
+.screen-home-desktop { display: flex; flex-direction: column; height: 100%; }
+.shd-hero { flex: 1; position: relative; overflow: hidden; background: linear-gradient(135deg, #C9A87C, #B87333); }
+.shd-hero img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.9); }
+.shd-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(245,240,232,0.05) 0%, rgba(245,240,232,0.75) 100%); }
+.shd-hero-content { position: absolute; bottom: 2rem; left: 2.5rem; right: 2.5rem; z-index: 1; }
+.shd-hero-eyebrow { font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.6rem; font-weight: 500; }
+.shd-hero-title { font-family: var(--font-display); font-size: 2.2rem; line-height: 1.05; max-width: 12ch; margin-bottom: 0.6rem; color: var(--ink); }
+.shd-hero-sub { font-family: var(--font-quote); font-style: italic; font-size: 0.75rem; color: var(--ink-soft); max-width: 40ch; margin-bottom: 1rem; }
+.shd-hero-cta { display: inline-block; padding: 0.5rem 1rem; background: var(--ink); color: var(--cream); font-size: 0.5rem; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 2px; font-weight: 500; }
+.shd-grid { padding: 1rem 2.5rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.6rem; background: var(--cream); height: 35%; }
+.shd-card { display: flex; flex-direction: column; }
+.shd-card-img { aspect-ratio: 4/5; background: var(--sand); overflow: hidden; margin-bottom: 0.4rem; }
+.shd-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.shd-card-name { font-family: var(--font-display); font-size: 0.6rem; line-height: 1.2; margin-bottom: 0.1rem; }
+.shd-card-price { font-size: 0.45rem; color: var(--copper); font-weight: 500; }
+
+/* SCREEN 02 HOME MOBILE */
+.screen-home-mobile { display: flex; flex-direction: column; height: 100%; }
+.shm-hero { flex: 1; position: relative; overflow: hidden; }
+.shm-hero img { width: 100%; height: 100%; object-fit: cover; }
+.shm-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(245,240,232,0.05) 0%, rgba(245,240,232,0.85) 100%); }
+.shm-hero-content { position: absolute; bottom: 1rem; left: 1rem; right: 1rem; z-index: 1; }
+.shm-hero-eyebrow { font-size: 0.4rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.4rem; font-weight: 500; }
+.shm-hero-title { font-family: var(--font-display); font-size: 1.1rem; line-height: 1.05; margin-bottom: 0.4rem; }
+.shm-hero-sub { font-family: var(--font-quote); font-style: italic; font-size: 0.55rem; color: var(--ink-soft); margin-bottom: 0.6rem; line-height: 1.3; }
+.shm-hero-cta { display: inline-block; padding: 0.4rem 0.8rem; background: var(--ink); color: var(--cream); font-size: 0.4rem; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 2px; font-weight: 500; }
+.shm-grid { padding: 0.6rem 1rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; background: var(--cream); height: 30%; }
+.mobile-nav { height: 40px; padding: 0 1rem; display: flex; justify-content: space-between; align-items: center; background: rgba(245,240,232,0.95); border-bottom: 1px solid rgba(28,28,28,0.08); font-size: 0.55rem; flex-shrink: 0; }
+.mobile-nav__logo { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.01em; font-style: italic; }
+.mobile-nav__right { display: flex; gap: 0.5rem; align-items: center; }
+.mobile-nav__cart { font-size: 0.45rem; padding: 0.2rem 0.4rem; border: 1px solid var(--line-strong); border-radius: 2px; display: flex; align-items: center; gap: 0.2rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* SCREEN 03 COLLECTION */
+.screen-collection { display: flex; flex-direction: column; height: 100%; }
+.collection-header { padding: 1.5rem 2rem 1rem; border-bottom: 1px solid rgba(28,28,28,0.08); }
+.collection-eyebrow { font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.3rem; font-weight: 500; }
+.collection-title { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 0.75rem; }
+.filters { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.filter-chip { padding: 0.3rem 0.7rem; border: 1px solid var(--line-strong); border-radius: 20px; font-size: 0.45rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); background: transparent; }
+.filter-chip--active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.collection-grid { flex: 1; padding: 1rem 2rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; overflow: hidden; }
+.collection-item { display: flex; flex-direction: column; }
+.collection-item__img { aspect-ratio: 4/5; background: var(--sand); overflow: hidden; margin-bottom: 0.35rem; position: relative; }
+.collection-item__img img { width: 100%; height: 100%; object-fit: cover; }
+.collection-item__tag { position: absolute; top: 0.4rem; left: 0.4rem; background: var(--cream); color: var(--ink); font-size: 0.4rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.15rem 0.35rem; border-radius: 2px; font-weight: 500; }
+.collection-item__name { font-family: var(--font-display); font-size: 0.6rem; line-height: 1.2; margin-bottom: 0.1rem; }
+.collection-item__price { font-size: 0.45rem; color: var(--copper); font-weight: 500; }
+
+/* SCREEN 04 PRODUCT DESKTOP */
+.screen-product-desktop { display: flex; flex-direction: column; height: 100%; }
+.product-layout { flex: 1; display: grid; grid-template-columns: 1.1fr 1fr; gap: 1.5rem; padding: 1.5rem 2rem; overflow: hidden; }
+.product-gallery { display: flex; flex-direction: column; gap: 0.5rem; }
+.product-gallery__main { flex: 1; background: var(--sand); overflow: hidden; }
+.product-gallery__main img { width: 100%; height: 100%; object-fit: cover; }
+.product-gallery__thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.3rem; }
+.product-gallery__thumb { aspect-ratio: 1; background: var(--sand); overflow: hidden; border: 1px solid transparent; }
+.product-gallery__thumb--active { border-color: var(--copper); }
+.product-gallery__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.product-detail { display: flex; flex-direction: column; overflow: hidden; }
+.product-detail__name { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.2rem; line-height: 1.1; }
+.product-detail__colorway { font-family: var(--font-quote); font-style: italic; font-size: 0.65rem; color: var(--ink-muted); margin-bottom: 0.5rem; }
+.product-detail__price { font-family: var(--font-display); font-size: 1rem; color: var(--copper); margin-bottom: 0.75rem; }
+.product-detail__desc { font-size: 0.6rem; color: var(--ink-soft); line-height: 1.5; margin-bottom: 0.75rem; }
+.product-detail__specs { margin-bottom: 0.75rem; }
+.spec-row-mini { display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid rgba(28,28,28,0.08); font-size: 0.5rem; }
+.spec-row-mini dt { color: var(--ink-muted); }
+.spec-row-mini dd { color: var(--ink); font-weight: 400; }
+.btn-wa-mini { display: flex; align-items: center; justify-content: center; gap: 0.35rem; width: 100%; padding: 0.6rem; background: var(--wa); color: white; font-size: 0.5rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; border-radius: 2px; margin-bottom: 0.4rem; }
+.btn-select-mini { display: flex; align-items: center; justify-content: center; width: 100%; padding: 0.5rem; background: transparent; color: var(--ink); font-size: 0.45rem; letter-spacing: 0.12em; text-transform: uppercase; border: 1px solid var(--line-strong); border-radius: 2px; }
+.product-trust { margin-top: 0.6rem; padding: 0.5rem 0.7rem; background: var(--cream-deep); border-radius: 2px; font-size: 0.5rem; color: var(--ink-soft); line-height: 1.4; }
+.product-trust strong { color: var(--ink); }
+
+/* SCREEN 05 PRODUCT MOBILE */
+.screen-product-mobile { display: flex; flex-direction: column; height: 100%; overflow-y: auto; }
+.product-mobile-img { aspect-ratio: 1; background: var(--sand); overflow: hidden; flex-shrink: 0; }
+.product-mobile-img img { width: 100%; height: 100%; object-fit: cover; }
+.product-mobile-info { padding: 0.75rem 1rem; }
+.product-mobile-name { font-family: var(--font-display); font-size: 0.85rem; margin-bottom: 0.15rem; line-height: 1.1; }
+.product-mobile-colorway { font-family: var(--font-quote); font-style: italic; font-size: 0.5rem; color: var(--ink-muted); margin-bottom: 0.35rem; }
+.product-mobile-price { font-family: var(--font-display); font-size: 0.7rem; color: var(--copper); margin-bottom: 0.5rem; }
+.product-mobile-btn-wa { display: flex; align-items: center; justify-content: center; gap: 0.3rem; width: 100%; padding: 0.5rem; background: var(--wa); color: white; font-size: 0.42rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; border-radius: 2px; margin-bottom: 0.3rem; }
+.product-mobile-btn-select { display: flex; align-items: center; justify-content: center; width: 100%; padding: 0.4rem; background: transparent; color: var(--ink); font-size: 0.38rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid var(--line-strong); border-radius: 2px; margin-bottom: 0.5rem; }
+.product-mobile-specs { margin-top: 0.5rem; }
+.product-mobile-trust { margin-top: 0.5rem; padding: 0.4rem 0.5rem; background: var(--cream-deep); border-radius: 2px; font-size: 0.42rem; color: var(--ink-soft); line-height: 1.4; }
+
+/* SCREEN 06 SELECTION EMPTY (slide-in panel) */
+.screen-selection { display: flex; flex-direction: column; height: 100%; position: relative; background: rgba(28,28,28,0.4); }
+.selection-bg { flex: 1; position: relative; overflow: hidden; }
+.selection-bg img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
+.selection-panel { position: absolute; top: 0; right: 0; bottom: 0; width: 65%; background: var(--cream); display: flex; flex-direction: column; box-shadow: -20px 0 60px rgba(28,28,28,0.15); }
+.selection-panel__head { padding: 1rem 1.2rem; border-bottom: 1px solid rgba(28,28,28,0.08); display: flex; justify-content: space-between; align-items: center; }
+.selection-panel__head h4 { font-family: var(--font-display); font-size: 0.95rem; }
+.selection-panel__close { font-size: 1.2rem; color: var(--ink-muted); line-height: 1; padding: 0.3rem; }
+.selection-panel__body { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem 1.5rem; text-align: center; }
+.selection-empty-icon { font-size: 2rem; color: var(--line-strong); margin-bottom: 1rem; }
+.selection-empty-title { font-family: var(--font-quote); font-style: italic; font-size: 0.95rem; color: var(--ink-soft); margin-bottom: 0.4rem; }
+.selection-empty-desc { font-size: 0.6rem; color: var(--ink-muted); line-height: 1.5; max-width: 25ch; }
+.selection-panel__foot { padding: 1rem 1.2rem; border-top: 1px solid rgba(28,28,28,0.08); background: var(--cream-deep); opacity: 0.5; }
+.selection-panel__foot .btn-disabled { display: block; width: 100%; padding: 0.6rem; background: var(--line-strong); color: white; font-size: 0.45rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; text-align: center; }
+
+/* SCREEN 07 SELECTION WITH ITEMS */
+.selection-items { padding: 1rem 1.2rem; flex: 1; overflow-y: auto; }
+.selection-item { display: flex; gap: 0.7rem; padding: 0.7rem 0; border-bottom: 1px solid rgba(28,28,28,0.08); align-items: center; }
+.selection-item:last-child { border-bottom: none; }
+.selection-item__img { width: 44px; height: 52px; object-fit: cover; background: var(--sand); border-radius: 2px; flex-shrink: 0; }
+.selection-item__info { flex: 1; min-width: 0; }
+.selection-item__name { font-family: var(--font-display); font-size: 0.7rem; margin-bottom: 0.1rem; }
+.selection-item__colorway { font-size: 0.5rem; color: var(--ink-muted); margin-bottom: 0.15rem; }
+.selection-item__price { font-size: 0.55rem; color: var(--copper); font-weight: 500; }
+.selection-panel__foot--active { opacity: 1; }
+.selection-panel__foot--active .btn-wa-mini { margin-bottom: 0.4rem; }
+.selection-total { display: flex; justify-content: space-between; font-family: var(--font-display); font-size: 0.8rem; margin-bottom: 0.6rem; color: var(--ink); }
+.selection-total span:last-child { color: var(--copper); }
+.selection-note { font-size: 0.45rem; color: var(--ink-muted); text-align: center; font-style: italic; font-family: var(--font-quote); line-height: 1.4; }
+
+/* SCREEN 08 PHONE NUMBER FORM */
+.screen-form { display: flex; flex-direction: column; height: 100%; position: relative; background: var(--cream); }
+.form-hero { flex: 0.6; background: var(--sand); overflow: hidden; position: relative; }
+.form-hero img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85); }
+.form-body { flex: 1; padding: 1.5rem 1.2rem; display: flex; flex-direction: column; }
+.form-title { font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.4rem; line-height: 1.2; }
+.form-sub { font-family: var(--font-quote); font-style: italic; font-size: 0.6rem; color: var(--ink-muted); margin-bottom: 1rem; line-height: 1.4; }
+.form-field { margin-bottom: 0.7rem; }
+.form-field label { font-size: 0.45rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.3rem; display: block; font-weight: 500; }
+.form-field input { width: 100%; padding: 0.5rem 0.6rem; border: 1px solid var(--line-strong); border-radius: 2px; background: white; font-family: var(--font-body); font-size: 0.55rem; color: var(--ink); }
+.form-field input::placeholder { color: var(--ink-muted); opacity: 0.6; }
+.form-optional { font-size: 0.4rem; color: var(--ink-muted); text-transform: none; letter-spacing: 0; font-style: italic; font-family: var(--font-quote); margin-left: 0.3rem; }
+.form-submit { display: block; width: 100%; padding: 0.6rem; background: var(--wa); color: white; font-size: 0.45rem; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 2px; font-weight: 600; text-align: center; margin-top: 0.5rem; }
+.form-skip { display: block; text-align: center; margin-top: 0.6rem; font-size: 0.45rem; color: var(--ink-muted); text-decoration: underline; font-style: italic; font-family: var(--font-quote); }
+.form-note { margin-top: 0.7rem; padding: 0.5rem; background: var(--cream-deep); border-radius: 2px; font-size: 0.42rem; color: var(--ink-soft); line-height: 1.4; }
+
+/* SCREEN 09 WHATSAPP PREVIEW */
+.screen-whatsapp { display: flex; flex-direction: column; height: 100%; background: #E5DDD0; position: relative; }
+.wa-header { background: #075E54; color: white; padding: 0.5rem 0.7rem; display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+.wa-header__back { font-size: 0.7rem; }
+.wa-header__avatar { width: 22px; height: 22px; border-radius: 50%; background: var(--copper); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 0.55rem; font-style: italic; color: white; }
+.wa-header__info { flex: 1; }
+.wa-header__name { font-size: 0.55rem; font-weight: 500; }
+.wa-header__status { font-size: 0.4rem; opacity: 0.7; }
+.wa-body { flex: 1; padding: 0.7rem 0.5rem; display: flex; flex-direction: column; gap: 0.4rem; overflow-y: auto; }
+.wa-date { text-align: center; font-size: 0.4rem; color: var(--ink-muted); background: rgba(255,255,255,0.6); align-self: center; padding: 0.15rem 0.4rem; border-radius: 3px; }
+.wa-message { background: white; padding: 0.5rem 0.6rem; border-radius: 6px; max-width: 85%; align-self: flex-end; font-size: 0.5rem; line-height: 1.5; color: var(--ink); box-shadow: 0 1px 1px rgba(0,0,0,0.08); position: relative; }
+.wa-message__time { display: block; text-align: right; font-size: 0.35rem; color: var(--ink-muted); margin-top: 0.2rem; }
+.wa-message__label { font-weight: 600; display: block; margin-bottom: 0.2rem; color: var(--ink); font-size: 0.45rem; }
+.wa-message strong { font-weight: 600; }
+.wa-note { padding: 0.4rem 0.6rem; background: rgba(255,255,255,0.85); border-top: 1px solid rgba(28,28,28,0.08); font-size: 0.38rem; color: var(--ink-muted); font-family: var(--font-quote); font-style: italic; line-height: 1.3; text-align: center; }
+
+/* SCREEN 10 DELIVERY */
+.screen-delivery { display: flex; flex-direction: column; height: 100%; overflow-y: auto; }
+.delivery-hero { padding: 2rem 1.5rem 1rem; border-bottom: 1px solid rgba(28,28,28,0.08); }
+.delivery-eyebrow { font-size: 0.45rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.4rem; font-weight: 500; }
+.delivery-title { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 0.3rem; }
+.delivery-sub { font-family: var(--font-quote); font-style: italic; font-size: 0.7rem; color: var(--ink-muted); }
+.delivery-grid { padding: 1rem 1.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+.delivery-zone { padding: 0.8rem 0.7rem; border: 1px solid var(--line); border-radius: 2px; }
+.delivery-zone h5 { font-family: var(--font-display); font-size: 0.7rem; margin-bottom: 0.3rem; }
+.delivery-zone .price-row { display: flex; justify-content: space-between; font-size: 0.5rem; color: var(--ink-soft); margin-bottom: 0.15rem; }
+.delivery-zone .price-row strong { color: var(--copper); font-weight: 500; }
+.delivery-zone .note { font-size: 0.45rem; color: var(--ink-muted); line-height: 1.4; margin-top: 0.4rem; font-style: italic; font-family: var(--font-quote); }
+.delivery-info { padding: 0.8rem 1.5rem 1.5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+.info-card { background: var(--cream-deep); padding: 0.7rem; border-radius: 2px; }
+.info-card h5 { font-family: var(--font-display); font-size: 0.65rem; margin-bottom: 0.3rem; }
+.info-card p { font-size: 0.5rem; color: var(--ink-soft); line-height: 1.4; }
+
+/* SCREEN 11 MAISON */
+.screen-maison { display: flex; flex-direction: column; height: 100%; overflow-y: auto; }
+.maison-hero { padding: 2rem 1.5rem 1rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: center; }
+.maison-img { aspect-ratio: 4/5; background: var(--sand); overflow: hidden; }
+.maison-img img { width: 100%; height: 100%; object-fit: cover; }
+.maison-text h2 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 0.5rem; line-height: 1.15; }
+.maison-text p { font-size: 0.55rem; color: var(--ink-soft); line-height: 1.5; margin-bottom: 0.5rem; }
+.maison-text .signature { font-family: var(--font-quote); font-style: italic; font-size: 0.7rem; color: var(--copper); }
+.maison-values { padding: 0 1.5rem 1.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+.maison-value h5 { font-family: var(--font-display); font-size: 0.65rem; margin-bottom: 0.2rem; }
+.maison-value p { font-size: 0.45rem; color: var(--ink-muted); line-height: 1.4; }
+
+/* SCREEN 12 CONTACT */
+.screen-contact { display: flex; flex-direction: column; height: 100%; }
+.contact-hero { padding: 2rem 1.5rem 1rem; text-align: center; border-bottom: 1px solid rgba(28,28,28,0.08); }
+.contact-eyebrow { font-size: 0.45rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--copper); margin-bottom: 0.4rem; font-weight: 500; }
+.contact-title { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 0.3rem; }
+.contact-sub { font-family: var(--font-quote); font-style: italic; font-size: 0.7rem; color: var(--ink-muted); max-width: 40ch; margin: 0 auto; }
+.contact-cards { padding: 1rem 1.5rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; flex: 1; }
+.contact-card { padding: 0.9rem 0.8rem; border: 1px solid var(--line); border-radius: 2px; display: flex; flex-direction: column; gap: 0.3rem; }
+.contact-card--primary { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+.contact-card h5 { font-family: var(--font-display); font-size: 0.75rem; margin-bottom: 0.1rem; }
+.contact-card p { font-size: 0.5rem; color: var(--ink-muted); line-height: 1.4; }
+.contact-card--primary p { color: rgba(245,240,232,0.65); }
+.contact-card__cta { margin-top: auto; font-size: 0.45rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--copper); font-weight: 500; }
+.contact-card--primary .contact-card__cta { color: var(--copper-soft); }
+.contact-footer { padding: 0.8rem 1.5rem; border-top: 1px solid rgba(28,28,28,0.08); text-align: center; }
+.contact-footer p { font-size: 0.45rem; color: var(--ink-muted); line-height: 1.5; font-family: var(--font-quote); font-style: italic; }
+
+/* OVERLAY */
+.overlay { position: fixed; inset: 0; background: rgba(20,18,16,0.96); z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; overflow-y: auto; padding: 5rem 2rem 3rem; }
+.overlay.is-open { opacity: 1; pointer-events: auto; }
+.overlay__close { position: fixed; top: 1.5rem; right: 1.5rem; background: rgba(245,240,232,0.1); border: 1px solid rgba(245,240,232,0.3); color: var(--cream); padding: 0.7rem 1.2rem; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; border-radius: 2px; z-index: 1001; transition: background 0.2s ease; }
+.overlay__close:hover { background: rgba(245,240,232,0.2); }
+.overlay__content { max-width: 1400px; margin: 0 auto; }
+.overlay__screen { background: var(--cream); border-radius: 8px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.6); }
+.overlay__screen .browser { width: 100%; aspect-ratio: 16 / 10; }
+.overlay__screen .phone { max-width: 420px; margin: 2rem auto; }
+.overlay__label { color: var(--cream); text-align: center; margin-top: 1.5rem; }
+.overlay__label h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 400; margin-bottom: 0.3rem; }
+.overlay__label p { font-family: var(--font-quote); font-style: italic; font-size: 1rem; color: rgba(245,240,232,0.6); }
+
+/* FOOTER */
+.gallery-footer { padding: 4rem 2rem; text-align: center; color: rgba(245,240,232,0.5); border-top: 1px solid rgba(245,240,232,0.08); }
+.gallery-footer__logo { font-family: var(--font-display); font-size: 1.8rem; color: var(--cream); letter-spacing: 0.02em; margin-bottom: 1rem; font-style: italic; }
+.gallery-footer p { font-size: 0.8rem; margin-bottom: 0.5rem; }
+.gallery-footer a { color: var(--copper-soft); text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 768px) {
+  .screens { grid-template-columns: 1fr; gap: 2.5rem; }
+  .gallery-intro { padding: 4rem 1.5rem 2rem; }
+  .flow { padding: 3rem 1.5rem; }
+  .gallery-header { padding: 1rem 1.5rem; }
+  .gallery-header__meta { display: none; }
+  .overlay { padding: 4rem 1rem 2rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="gallery-header">
+  <div class="gallery-header__logo">Signature Optique</div>
+  <div class="gallery-header__meta">Maquettes détaillées · 12 écrans</div>
+  <a href="index.html" class="gallery-header__back">← Dossier</a>
+</header>
+
+<section class="gallery-intro">
+  <div class="gallery-intro__num">Maquettes détaillées</div>
+  <h1>Chaque page. Chaque écran. Chaque interaction.</h1>
+  <p>Cliquez sur un écran pour l'ouvrir en grand format. Tout ce que vous voyez est le vrai design, pas une image.</p>
+</section>
+
+<nav class="gallery-legend">
+  <a href="#flow-discovery"><span class="num">01</span>Découverte</a>
+  <a href="#flow-intention"><span class="num">02</span>Intention</a>
+  <a href="#flow-trust"><span class="num">03</span>Confiance</a>
+</nav>
+
+<!-- ============ FLOW 1 — DÉCOUVERTE ============ -->
+<section class="flow" id="flow-discovery">
+  <div class="flow__head">
+    <div class="flow__num">Flow 01 · 5 écrans</div>
+    <h2>Découverte</h2>
+    <p>Ce qu'un nouveau visiteur voit, de la première seconde à la fiche produit.</p>
+  </div>
+
+  <div class="screens">
+
+    <div class="screen">
+      <div class="screen__frame" id="screen-01" onclick="openScreen('screen-01')">
+        <div class="browser">
+          <div class="browser__bar">
+            <div class="browser__dot browser__dot--red"></div>
+            <div class="browser__dot browser__dot--yellow"></div>
+            <div class="browser__dot browser__dot--green"></div>
+            <div class="browser__url">signature-optique.cg</div>
+          </div>
+          <div class="browser__content">
+            <div class="screen-home-desktop">
+              <div class="mock-nav">
+                <div class="mock-nav__logo">Signature Optique</div>
+                <div class="mock-nav__links"><span>Collection</span><span>Livraison</span><span>La Maison</span></div>
+                <div class="mock-nav__cart">Ma sélection <span class="mock-nav__cart-count">0</span></div>
+              </div>
+              <div class="shd-hero">
+                <img src="https://images.unsplash.com/photo-1614715838608-dd527c46231d?w=900&q=80" alt="">
+                <div class="shd-hero-content">
+                  <div class="shd-hero-eyebrow">Brazzaville · Pointe-Noire</div>
+                  <div class="shd-hero-title">Des lunettes qui vous ressemblent.</div>
+                  <div class="shd-hero-sub">Livraison à Brazzaville et Pointe-Noire. Paiement à la réception. Réponse WhatsApp en moins de 2h.</div>
+                  <div class="shd-hero-cta">Découvrir la collection →</div>
+                </div>
+              </div>
+              <div class="shd-grid">
+                <div class="shd-card"><div class="shd-card-img"><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&q=80" alt=""></div><div class="shd-card-name">Ayo</div><div class="shd-card-price">25 000 FCFA</div></div>
+                <div class="shd-card"><div class="shd-card-img"><img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=300&q=80" alt=""></div><div class="shd-card-name">Zuri</div><div class="shd-card-price">22 000 FCFA</div></div>
+                <div class="shd-card"><div class="shd-card-img"><img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=300&q=80" alt=""></div><div class="shd-card-name">Nkosi</div><div class="shd-card-price">28 000 FCFA</div></div>
+                <div class="shd-card"><div class="shd-card-img"><img src="https://images.unsplash.com/photo-1577803645773-f96470509666?w=300&q=80" alt=""></div><div class="shd-card-name">Lina</div><div class="shd-card-price">26 000 FCFA</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen__zoom">Agrandir ↗</div>
+      </div>
+      <div class="screen__caption">
+        <div class="screen__caption-top"><span class="screen__id">Écran 01</span></div>
+        <div class="screen__title">Accueil · Desktop</div>
+        <div class="screen__desc">Hero plein écran, promesse claire, produits phares. La première seconde doit convaincre.</div>
+      </div>
+    </div>
+
+    <div class="screen">
+      <div class="screen__frame" id="screen-02" onclick="openScreen('screen-02')">
+        <div class="phone">
+          <div class="phone__notch"></div>
+          <div class="phone__screen">
+            <div class="screen-home-mobile">
+              <div class="mobile-nav">
+                <div class="mobile-nav__logo">Signature Optique</div>
+                <div class="mobile-nav__right"><div class="mobile-nav__cart">Sél. <span class="mock-nav__cart-count">0</span></div></div>
+              </div>
+              <div class="shm-hero">
+                <img src="https://images.unsplash.com/photo-1614715838608-dd527c46231d?w=500&q=80" alt="">
+                <div class="shm-hero-content">
+                  <div class="shm-hero-eyebrow">Brazzaville · Pointe-Noire</div>
+                  <div class="shm-hero-title">Des lunettes qui vous ressemblent.</div>
+                  <div class="shm-hero-sub">Livraison à Brazzaville & Pointe-Noire. Paiement à la réception.</div>
+                  <div class="shm-hero-cta">Découvrir →</div>
+                </div>
+              </div>
+              <div class="shm-grid">
+                <div class="shd-card"><div class="shd-card-img"><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=200&q=80" alt=""></div><div class="shd-card-name">Ayo</div><div class="shd-card-price">25 000 F</div></div>
+                <div class="shd-card"><div class="shd-card-img"><img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=200&q=80" alt=""></div><div class="shd-card-name">Zuri</div><div class="shd-card-price">22 000 F</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen__zoom">Agrandir ↗</div>
+      </div>
+      <div class="screen__caption">
+        <div class="screen__caption-top"><span class="screen__id">Écran 02</span></div>
+        <div class="screen__title">Accueil · Mobile</div>
+        <div class="screen__desc">La vraie première impression. 80 % du trafic viendra d'ici, depuis Instagram.</div>
+      </div>
+    </div>
+
+    <div class="screen">
+      <div class="screen__frame" id="screen-03" onclick="openScreen('screen-03')">
+        <div class="browser">
+          <div class="browser__bar">
+            <div class="browser__dot browser__dot--red"></div>
+            <div class="browser__dot browser__dot--yellow"></div>
+            <div class="browser__dot browser__dot--green"></div>
+            <div class="browser__url">signature-optique.cg/collection</div>
+          </div>
+          <div class="browser__content">
+            <div class="screen-collection">
+              <div class="mock-nav">
+                <div class="mock-nav__logo">Signature Optique</div>
+                <div class="mock-nav__links"><span>Collection</span><span>Livraison</span><span>La Maison</span></div>
+                <div class="mock-nav__cart">Ma sélection <span class="mock-nav__cart-count">2</span></div>
+              </div>
+              <div class="collection-header">
+                <div class="collection-eyebrow">La collection</div>
+                <div class="collection-title">Toutes nos montures</div>
+                <div class="filters">
+                  <div class="filter-chip filter-chip--active">Tout</div>
+                  <div class="filter-chip">Solaires</div>
+                  <div class="filter-chip">Vue</div>
+                  <div class="filter-chip">Rondes</div>
+                  <div class="filter-chip">Carrées</div>
+                  <div class="filter-chip">Aviateur</div>
+                  <div class="filter-chip">Papillon</div>
+                </div>
+              </div>
+              <div class="collection-grid">
+                <div class="collection-item"><div class="collection-item__img"><span class="collection-item__tag">Nouveau</span><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&q=80" alt=""></div><div class="collection-item__name">Ayo</div><div class="collection-item__price">25 000 FCFA</div></div>
+                <div class="collection-item"><div class="collection-item__img"><img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=300&q=80" alt=""></div><div class="collection-item__name">Zuri</div><div class="collection-item__price">22 000 FCFA</div></div>
+                <div class="collection-item"><div class="collection-item__img"><span class="collection-item__tag">Best-seller</span><img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=300&q=80" alt=""></div><div class="collection-item__name">Nkosi</div><div class="collection-item__price">28 000 FCFA</div></div>
+                <div class="collection-item"><div class="collection-item__img"><img src="https://images.unsplash.com/photo-1577803645773-f96470509666?w=300&q=80" alt=""></div><div class="collection-item__name">Lina</div><div class="collection-item__price">26 000 FCFA</div></div>
+                <div class="collection-item"><div class="collection-item__img"><img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=300&q=80" alt=""></div><div class="collection-item__name">Kongo</div><div class="collection-item__price">24 000 FCFA</div></div>
+                <div class="collection-item"><div class="collection-item__img"><img src="https://images.unsplash.com/photo-1583192392788-83c0e8f5cd7e?w=300&q=80" alt=""></div><div class="collection-item__name">Maya</div><div class="collection-item__price">27 000 FCFA</div></div>
+                <div class="collection-item"><div class="collection-item__img"><img src="https://images.unsplash.com/photo-1577744486770-020ab432da65?w=300&q=80" alt=""></div><div class="collection-item__name">Sena</div><div class="collection-item__price">23 000 FCFA</div></div>
+                <div class="collection-item"><div class="collection-item__img"><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=300&q=80" alt=""></div><div class="collection-item__name">Tatu</div><div class="collection-item__price">25 000 FCFA</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen__zoom">Agrandir ↗</div>
+      </div>
+      <div class="screen__caption">
+        <div class="screen__caption-top"><span class="screen__id">Écran 03</span></div>
+        <div class="screen__title">Catalogue · Filtres</div>
+        <div class="screen__desc">Filtres par forme et usage. Tout est visible, rien n'est caché. La transparence, c'est la confiance.</div>
+      </div>
+    </div>
+
+    <div class="screen">
+      <div class="screen__frame" id="screen-04" onclick="openScreen('screen-04')">
+        <div class="browser">
+          <div class="browser__bar">
+            <div class="browser__dot browser__dot--red"></div>
+            <div class="browser__dot browser__dot--yellow"></div>
+            <div class="browser__dot browser__dot--green"></div>
+            <div class="browser__url">signature-optique.cg/ayo-ecaille</div>
+          </div>
+          <div class="browser__content">
+            <div class="screen-product-desktop">
+              <div class="mock-nav">
+                <div class="mock-nav__logo">Signature Optique</div>
+                <div class="mock-nav__links"><span>Collection</span><span>Livraison</span><span>La Maison</span></div>
+                <div class="mock-nav__cart">Ma sélection <span class="mock-nav__cart-count">1</span></div>
+              </div>
+              <div class="product-layout">
+                <div class="product-gallery">
+                  <div class="product-gallery__main"><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&q=80" alt=""></div>
+                  <div class="product-gallery__thumbs">
+                    <div class="product-gallery__thumb product-gallery__thumb--active"><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=150&q=80" alt=""></div>
+                    <div class="product-gallery__thumb"><img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=150&q=80" alt=""></div>
+                    <div class="product-gallery__thumb"><img src="https://images.unsplash.com/photo-1577803645773-f96470509666?w=150&q=80" alt=""></div>
+                    <div class="product-gallery__thumb"><img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=150&q=80" alt=""></div>
+                  </div>
+                </div>
+                <div class="product-detail">
+                  <div class="product-detail__name">Ayo</div>
+                  <div class="product-detail__colorway">Écaille · Solaires</div>
+                  <div class="product-detail__price">25 000 FCFA</div>
+                  <div class="product-detail__desc">Une monture ronde en acétate écaille, pensée pour les visages qui aiment la douceur. Légère, solide, intemporelle.</div>
+                  <dl class="product-detail__specs">
+                    <div class="spec-row-mini"><dt>Forme</dt><dd>Ronde</dd></div>
+                    <div class="spec-row-mini"><dt>Matière</dt><dd>Acétate italien</dd></div>
+                    <div class="spec-row-mini"><dt>Verres</dt><dd>UV400 · catégorie 3</dd></div>
+                    <div class="spec-row-mini"><dt>Largeur</dt><dd>142 mm</dd></div>
+                  </dl>
+                  <div class="btn-wa-mini"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Commander sur WhatsApp</div>
+                  <div class="btn-select-mini">Ajouter à ma sélection</div>
+                  <div class="product-trust"><strong>Livraison à Brazzaville et Pointe-Noire.</strong><br>Paiement à la réception. Réponse WhatsApp en moins de 2h.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen__zoom">Agrandir ↗</div>
+      </div>
+      <div class="screen__caption">
+        <div class="screen__caption-top"><span class="screen__id">Écran 04</span></div>
+        <div class="screen__title">Fiche produit · Desktop</div>
+        <div class="screen__desc">Galerie, specs honnêtes, prix transparent. Le bouton WhatsApp domine. La sélection est discrète mais présente.</div>
+      </div>
+    </div>
+
+    <div class="screen">
+      <div class="screen__frame" id="screen-05" onclick="openScreen('screen-05')">
+        <div class="phone">
+          <div class="phone__notch"></div>
+          <div class="phone__screen">
+            <div class="screen-product-mobile">
+              <div class="mobile-nav">
+                <div class="mobile-nav__logo">← Retour</div>
+                <div class="mobile-nav__right"><div class="mobile-nav__cart">Sél. <span class="mock-nav__cart-count">1</span></div></div>
+              </div>
+              <div class="product-mobile-img"><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&q=80" alt=""></div>
+              <div class="product-mobile-info">
+                <div class="product-mobile-name">Ayo</div>
+                <div class="product-mobile-colorway">Écaille · Solaires</div>
+                <div class="product-mobile-price">25 000 FCFA</div>
+                <div class="product-mobile-btn-wa"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Commander sur WhatsApp</div>
+                <div class="product-mobile-btn-select">Ajouter à ma sélection</div>
+                <dl class="product-mobile-specs">
+                  <div class="spec-row-mini"><dt>Forme</dt><dd>Ronde</dd></div>
+                  <div class="spec-row-mini"><dt>Matière</dt><dd>Acétate italien</dd></div>
+                  <div class="spec-row-mini"><dt>Verres</dt><dd>UV400</dd></div>
+                </dl>
+                <div class="product-mobile-trust"><strong>Livraison à Brazzaville et Pointe-Noire.</strong><br>Paiement à la réception.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen__zoom">Agrandir ↗</div>
+      </div>
+      <div class="screen__caption">
+        <div class="screen__caption-top"><span class="screen__id">Écran 05</span></div>
+        <div class="screen__title">Fiche produit · Mobile</div>
+        <div class="screen__desc">Le CTA WhatsApp est le premier élément interactif. Le pouce tombe dessus naturellement.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FLOW 2 — INTENTION ============ -->
+<section class="flow" id="flow-intention">
+  <div class="flow__head">
+    <div class="flow__num">Flow 02 · 4 écrans</div>
+    <h2>Intention</h2>
+    <p>Le moment où le client hésite. C'est là qu'on capture, sans forcer.</p>
+  </div>
+
+  <div class="screens">
+
+    <div class="screen">
+      <div class="screen__frame" id="screen-06" onclick="openScreen('screen-06')">
+        <div class="browser">
+          <div class="browser__bar">
+            <div class="browser__dot browser__dot--red"></div>
+            <div class="browser__dot browser__dot--yellow"></div>
+            <div class="browser__dot browser__dot--green"></div>
+            <div class="browser__url">signature-optique.cg — Ma sélection</div>
+          </div>
+          <div class="browser__content">
+            <div class="screen-selection">
+              <div class="selection-bg"><img src="https://images.unsplash.com/photo-1614715838608-dd527c46231d?w=500&q=80" alt=""></div>
+              <div class="selection-panel">
+                <div class="selection-panel__head">
+                  <h4>Ma sélection</h4>
+                  <div class="selection-panel__close">×</div>
+                </div>
+                <div class="selection-panel__body">
+                  <div class="selection-empty-icon">◇</div>
+                  <div class="selection-empty-title">Votre sélection est vide.</div>
+                  <div class="selection-empty-desc">Ajoutez des modèles pour les retrouver ici et nous les envoyer sur WhatsApp.</div>
+                </div>
+                <div class="selection-panel__foot">
+                  <div class="btn-disabled">Recevoir ma sélection</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen__zoom">Agrandir ↗</div>
+      </div>
+      <div class="screen__caption">
+        <div class="screen__caption-top"><span class="screen__id">Écran 06</span></div>
+        <div class="screen__title">Ma Sélection · Vide</div>
+        <div class="screen__desc">Un état vide, jamais honteux. On invite, on n'infantilise pas. Le bouton est là, discret, désactivé.</div>
+      </div>
+    </div>
+
+    <div class="screen">
+      <div class="screen__frame" id="screen-07" onclick="openScreen('screen-07')">
+        <div class="browser">
+          <div class="browser__bar">
+            <div class="browser__dot browser__dot--red"></div>
+            <div class="browser__dot browser__dot--yellow"></div>
+            <div class="browser__dot browser__dot--green"></div>
+            <div class="browser__url">signature-optique.cg — Ma sélection</div>
+          </div>
+          <div class="browser__content">
+            <div class="screen-selection">
+              <div class="selection-bg"><img src="https://images.unsplash.com/photo-1614715838608-dd527c46231d?w=500&q=80" alt=""></div>
+              <div class="selection-panel">
+                <div class="selection-panel__head">
+                  <h4>Ma sélection · 3</h4>
+                  <div class="selection-panel__close">×</div>
+                </div>
+                <div class="selection-items">
+                  <div class="selection-item">
+                    <img class="selection-item__img" src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=150&q=80" alt="">
+                    <div class="selection-item__info">
+                      <div class="selection-item__name">Ayo</div>
+                      <div class="selection-item__colorway">Écaille</div>
+                      <div class="selection-item__price">25 000 FCFA</div>
+                    </div>
+                  </div>
+                  <div class="selection-item">
+                    <img class="selection-item__img" src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=150&q=80" alt="">
+                    <div class="selection-item__info">
+                      <div class="selection-item__name">Nkosi</div>
+                      <div class="selection-item__colorway">Aviateur doré</div>
+                      <div class="selection-item__price">28 000 FCFA</div>
+                    </div>
+                  </div>
+                  <div class="selection-item">
+                    <img class="selection-item__img" src="https://images.unsplash.com/photo-1577803645773-f96470509666?w=150&q=80" alt="">
+                    <div class="selection-item__info">
+                      <div class="selection-item__name">Lina</div>
+                      <div class="selection-item__colorway">Papillon sauge</div>
+                      <div class="selection-item__price">26 000 FCFA</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="selection-panel__foot selection-panel__foot--active">
+                  <div class="selection-total"><span>Total</span><span>79 000 FCFA</span></div>
+                  <div class="btn-wa-mini" style="margin-bottom: 0.4rem;"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Recevoir ma sélection sur WhatsApp</div>
+                  <div class="selection-note">On vous répond en moins de 2h pour confirmer la disponibilité.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen__zoom">Agrandir ↗</div>
+      </div>
+      <div class="screen__caption">
+        <div class="screen__caption-top"><span class="screen__id">Écran 07</span></div>
+        <div class="screen__title">Ma Sélection · Remplie</div>
+        <div class="screen__desc">3 modèles, un total. Un seul bouton. Le message WhatsApp partira avec tout le contenu.</div>
+      </div>
+    </div>
+
+    <div class="screen">
+      <div class="screen__frame" id="screen-08" onclick="openScreen('screen-08')">
+        <div class="phone">
+          <div class="phone__notch"></div>
+          <div class="phone__screen">
+            <div class="screen-form">
+              <div class="form-hero"><img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&q=80" alt=""></div>
+              <div class="form-body">
+                <div class="form-title">Avant d'ouvrir WhatsApp</div>
+                <div class="form-sub">Laissez votre numéro pour recevoir votre sélection et notre réponse plus vite.</div>
+                <div class="form-field">
+                  <label>Votre numéro <span class="form-optional">(optionnel)</span></label>
+                  <input type="tel" placeholder="+242 06 000 0000" readonly>
+                </div>
+                <div class="form-field">
+                  <label>Votre prénom <span class="form-optional">(optionnel)</span></label>
+                  <input type="text" placeholder="Marie" readonly>
+                </div>
+                <div class="form-submit">Continuer vers WhatsApp →</div>
+                <div class="form-skip">Passer cette étape</div>
+                <div class="form-note">Votre numéro n'est utilisé que pour vous répondre. Jamais partagé. Vous pouvez vous désinscrire à tout moment.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen__zoom">Agrandir ↗</div>
+      </div>
+      <div class="screen__caption">
+        <div class="screen__caption-top"><span class="screen__id">Écran 08</span></div>
+        <div class="screen__title">Capture de contact · Optionnelle</div>
+        <div class="screen__desc">Petit formulaire avant WhatsApp. Deux champs, tous optionnels. « Passer » toujours visible. Le client décide.</div>
+      </div>
+    </div>
+
+    <div class="screen">
+      <div class="screen__frame" id="screen-09" onclick="openScreen('screen-09')">
+        <div class="phone">
+          <div class="phone__notch"></div>
+          <div class="phone__screen">
+            <div class="screen-whatsapp">
+              <div class="wa-header">
+                <div class="wa-header__back">←</div>
+                <div class="wa-header__avatar">SO</div>
+                <div class="wa-header__info">
+                  <div class="wa-header__name">Signature Optique</div>
+                  <div class="wa-header__status">en ligne</div>
+                </div>
+              </div>
+              <div class="wa-body">
+                <div class="wa-date">Aujourd'hui</div>
+                <div class="wa-message">
+                  <span class="wa-message__label">Message pré-rempli · depuis le site</span>
+                  Bonjour Signature Optique 👋<br><br>
+                  Je suis intéressé(e) par le modèle <strong>Ayo — Écaille</strong> (Solaires).<br>
+                  Référence : ayo-ecaille<br>
+                  Prix affiché : 25 000 FCFA<br><br>
+                  Pouvez-vous me confirmer la disponibilité et les modalités de livraison ?<br><br>
+                  Merci !
+                  <span class="wa-message__time">14:32 ✓✓</span>
+                </div>
+              </div>
+              <div class="wa-note">Le message est déjà écrit. Le client n'a qu'à appuyer sur Envoyer.</div>
+            </div>
+          </div>
+        </div>
+        <div class="screen__zoom">Agrandir ↗</div>
+      </div>
+      <div class="screen__caption">
+        <div class="screen__caption-top"><span class="screen__id">Écran 09</span></div>
+        <div class="screen__title">WhatsApp · Message pré-rempli</div>
+        <div class="screen__desc">Ce que le client envoie. Référence, modèle, prix : tout est là. La conversation devient courte et professionnelle.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FLOW 3 — CONFIANCE ============ -->
+<section class="flow" id="flow-trust">
+  <div class="flow__head">
+    <div class="flow__num">Flow 03 · 3 écrans</div>
+    <h2>Confiance</h2>
+    <p>Les pages qui rassurent. Dans un marché où la peur de l'arnaque est réelle, la transparence est l'argument.</p>
+  </div>
+
+  <div class="screens">
+
+    <div class="screen">
+      <div class="screen__frame" id="screen-10" onclick="openScreen('screen-10')">
+        <div class="browser">
+          <div class="browser__bar">
+            <div class="browser__dot browser__dot--red"></div>
+            <div class="browser__dot browser__dot--yellow"></div>
+            <div class="browser__dot browser__dot--green"></div>
+            <div class="browser__url">signature-optique.cg/livraison</div>
+          </div>
+          <div class="browser__content">
+            <div class="screen-delivery">
+              <div class="mock-nav">
+                <div class="mock-nav__logo">Signature Optique</div>
+                <div class="mock-nav__links"><span>Collection</span><span>Livraison</span><span>La Maison</span></div>
+                <div class="mock-nav__cart">Ma sélection <span class="mock-nav__cart-count">0</span></div>
+              </div>
+              <div class="delivery-hero">
+                <div class="delivery-eyebrow">Livraison & paiement</div>
+                <div class="delivery-title">Simple, transparent, à la congolaise.</div>
+                <div class="delivery-sub">Paiement à la réception. Pas de carte bancaire nécessaire.</div>
+              </div>
+              <div class="delivery-grid">
+                <div class="delivery-zone">
+                  <h5>Brazzaville</h5>
+                  <div class="price-row"><span>Délai</span><strong>24–48h</strong></div>
+                  <div class="price-row"><span>Frais</span><strong>2 500 FCFA</strong></div>
+                  <div class="note">Paiement à la réception. Livraison à domicile ou au bureau.</div>
+                </div>
+                <div class="delivery-zone">
+                  <h5>Pointe-Noire</h5>
+                  <div class="price-row"><span>Délai</span><strong>48–72h</strong></div>
+                  <div class="price-row"><span>Frais</span><strong>4 000 FCFA</strong></div>
+                  <div class="note">Paiement à la réception. Livraison à domicile ou point relais.</div>
+                </div>
+                <div class="delivery-zone">
+                  <h5>Autres villes</h5>
+                  <div class="price-row"><span>Délai</span><strong>Sur devis</strong></div>
+                  <div class="price-row"><span>Frais</span><strong>Sur devis</strong></div>
+                  <div class="note">Contactez-nous sur WhatsApp. Nous trouvons la meilleure solution.</div>
+                </div>
+              </div>
+              <div class="delivery-info">
+                <div class="info-card">
+                  <h5>Retours & échanges</h5>
+                  <p>7 jours pour changer d'avis. Monture non portée, dans son emballage. Échange ou remboursement.</p>
+                </div>
+                <div class="info-card">
+                  <h5>Verres correcteurs</h5>
+                  <p>Ordonnance acceptée en photo sur WhatsApp. Vérifiée par notre opticien partenaire avant montage.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen__zoom">Agrandir ↗</div>
+      </div>
+      <div class="screen__caption">
+        <div class="screen__caption-top"><span class="screen__id">Écran 10</span></div>
+        <div class="screen__title">Livraison & paiement</div>
+        <div class="screen__desc">Zones, délais, frais, retours. Tout est dit. C'est cette page qui fait basculer les hésitants.</div>
+      </div>
+    </div>
+
+    <div class="screen">
+      <div class="screen__frame" id="screen-11" onclick="openScreen('screen-11')">
+        <div class="browser">
+          <div class="browser__bar">
+            <div class="browser__dot browser__dot--red"></div>
+            <div class="browser__dot browser__dot--yellow"></div>
+            <div class="browser__dot browser__dot--green"></div>
+            <div class="browser__url">signature-optique.cg/la-maison</div>
+          </div>
+          <div class="browser__content">
+            <div class="screen-maison">
+              <div class="mock-nav">
+                <div class="mock-nav__logo">Signature Optique</div>
+                <div class="mock-nav__links"><span>Collection</span><span>Livraison</span><span>La Maison</span></div>
+                <div class="mock-nav__cart">Ma sélection <span class="mock-nav__cart-count">0</span></div>
+              </div>
+              <div class="maison-hero">
+                <div class="maison-img"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&q=80" alt=""></div>
+                <div class="maison-text">
+                  <h2>L'élégance n'a pas besoin de crier.</h2>
+                  <p>Signature Optique est née à Brazzaville d'une conviction : les lunettes ne sont pas qu'un accessoire. C'est un geste, une signature.</p>
+                  <p>Nous choisissons chaque monture à la main, chez des fabricants qui partagent notre exigence.</p>
+                  <div class="signature">— La maison</div>
+                </div>
+              </div>
+              <div class="maison-values">
+                <div class="maison-value"><h5>Choisi à la main</h5><p>Chaque modèle est sélectionné pour sa qualité, sa forme, son histoire.</p></div>
+                <div class="maison-value"><h5>Prix honnête</h5><p>Pas de marge cachée. Le prix affiché est le prix final.</p></div>
+                <div class="maison-value"><h5>Service humain</h5><p>Une vraie personne vous répond. Pas un bot.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen__zoom">Agrandir ↗</div>
+      </div>
+      <div class="screen__caption">
+        <div class="screen__caption-top"><span class="screen__id">Écran 11</span></div>
+        <div class="screen__title">La Maison</div>
+        <div class="screen__desc">Visage, histoire, valeurs. Le client achète à une personne, pas à un site. C'est ce qui construit la confiance.</div>
+      </div>
+    </div>
+
+    <div class="screen">
+      <div class="screen__frame" id="screen-12" onclick="openScreen('screen-12')">
+        <div class="phone">
+          <div class="phone__notch"></div>
+          <div class="phone__screen">
+            <div class="screen-contact">
+              <div class="mobile-nav">
+                <div class="mobile-nav__logo">Signature Optique</div>
+                <div class="mobile-nav__right"><div class="mobile-nav__cart">Sél. <span class="mock-nav__cart-count">0</span></div></div>
+              </div>
+              <div class="contact-hero">
+                <div class="contact-eyebrow">Contact</div>
+                <div class="contact-title">On vous répond vite.</div>
+                <div class="contact-sub">WhatsApp en moins de 2h. Appel aux heures d'ouverture.</div>
+              </div>
+              <div class="contact-cards">
+                <div class="contact-card contact-card--primary">
+                  <h5>WhatsApp</h5>
+                  <p>La façon la plus rapide. Réponse en moins de 2h.</p>
+                  <div class="contact-card__cta">Ouvrir →</div>
+                </div>
+                <div class="contact-card">
+                  <h5>Téléphone</h5>
+                  <p>+242 06 000 0000<br>Lun–Sam, 9h–18h</p>
+                  <div class="contact-card__cta">Appeler →</div>
+                </div>
+                <div class="contact-card">
+                  <h5>Instagram</h5>
+                  <p>@signature.optique<br>Nouveautés chaque semaine</p>
+                  <div class="contact-card__cta">Suivre →</div>
+                </div>
+                <div class="contact-card">
+                  <h5>Boutique</h5>
+                  <p>Brazzaville, Congo<br>Sur rendez-vous</p>
+                  <div class="contact-card__cta">Itinéraire →</div>
+                </div>
+              </div>
+              <div class="contact-footer">
+                <p>Chaque message est lu par une vraie personne.<br>Jamais un bot, jamais un formulaire sans réponse.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="screen__zoom">Agrandir ↗</div>
+      </div>
+      <div class="screen__caption">
+        <div class="screen__caption-top"><span class="screen__id">Écran 12</span></div>
+        <div class="screen__title">Contact · Mobile</div>
+        <div class="screen__desc">WhatsApp en premier, tout le reste en support. La promesse de réponse est affichée. C'est un engagement.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="gallery-footer">
+  <div class="gallery-footer__logo">Signature Optique</div>
+  <p>Maquettes détaillées · 2025</p>
+  <p><a href="index.html">← Retour au dossier</a> · <a href="annexe-tarifs.html">Grille tarifaire</a> · <a href="annexe-roadmap.html">Roadmap</a></p>
+</footer>
+
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeScreen()">
+  <button class="overlay__close" onclick="closeScreen()">✕ Fermer</button>
+  <div class="overlay__content" id="overlay-content"></div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  const overlay = document.getElementById('overlay');
+  const overlayContent = document.getElementById('overlay-content');
+
+  window.openScreen = function(id) {
+    const frame = document.getElementById(id);
+    if (!frame) {
+      console.warn('Screen not found:', id);
+      return;
+    }
+
+    // Find the mockup inside (browser or phone)
+    const mockup = frame.querySelector('.browser, .phone');
+    if (!mockup) return;
+
+    // Deep clone — but strip the zoom label and hover behavior
+    const clone = mockup.cloneNode(true);
+
+    // Build the overlay content
+    overlayContent.innerHTML = '';
+
+    const screenWrap = document.createElement('div');
+    screenWrap.className = 'overlay__screen';
+    screenWrap.appendChild(clone);
+    overlayContent.appendChild(screenWrap);
+
+    // Add the label from the caption
+    const screen = frame.closest('.screen');
+    if (screen) {
+      const title = screen.querySelector('.screen__title');
+      const desc = screen.querySelector('.screen__desc');
+      const id = screen.querySelector('.screen__id');
+      const label = document.createElement('div');
+      label.className = 'overlay__label';
+      label.innerHTML = `
+        <h3>${id ? id.textContent + ' · ' : ''}${title ? title.textContent : ''}</h3>
+        <p>${desc ? desc.textContent : ''}</p>
+      `;
+      overlayContent.appendChild(label);
+    }
+
+    overlay.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    overlay.scrollTop = 0;
+  };
+
+  window.closeScreen = function() {
+    overlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+  };
+
+  // Esc to close
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+      closeScreen();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
